@@ -24,8 +24,8 @@ while True:
     print(f"Balance: {balance_ether} Ether")
 
     # Check if balance is above 0.10 Ether
-    if balance_ether > 0.10:
+    if balance_ether > 0.01:
         break
 
     # Wait for some time before generating the next key
-    time.sleep(5)  # Adjust the delay as needed
+    time.sleep(0.01)  # Adjust the delay as needed
