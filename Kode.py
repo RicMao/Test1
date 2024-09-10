@@ -20,8 +20,8 @@ while True:
     # Convert the balance from wei to Ether
     balance_ether = w3.from_wei(balance, 'ether')
 
-    print(f"Private Key: Fore.green + {private_key}")
-    print(f"Address: Fore.yellow + {address}")
+    print(f"Private Key: {Fore.GREEN + private_key}")
+    print(f"Address: {Fore.YELLOW + address}")
     print(f"Balance: {balance_ether} Ether")
 
     # Check if balance is above 0.10 Ether
@@ -29,4 +29,4 @@ while True:
         break
 
     # Wait for some time before generating the next key
-    time.sleep(0.0005)
+    time.sleep(0.00002)
