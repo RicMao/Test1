@@ -22,9 +22,9 @@ while True:
 
     print(f"Private Key: {Fore.GREEN + private_key}")
     print(f"Address: {Fore.YELLOW + address}")
-    print(f"Balance: {balance_ether} Ether")
+    print(f"Ether: {balance_ether}")
 
-    # Check if balance is above 0.10 Ether
+    # Check if balance is above 0.01 Ether
     if balance_ether > 0.01:
         break
 
