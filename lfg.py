@@ -39,7 +39,6 @@ yellow = Colors.YELLOW
 reset = Colors.RESET
 getClear()
 # ------------------------------------------------------------------------
-print(green, mmdrza, reset)
 print('Start ...')
 time.sleep(0.1)
 # ------------------------------------------------------------------------
