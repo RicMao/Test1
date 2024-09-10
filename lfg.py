@@ -40,7 +40,7 @@ reset = Colors.RESET
 getClear()
 # ------------------------------------------------------------------------
 print('Are You Ready COKK ?!...')
-time.sleep(0.1)
+time.sleep(0.0001)
 # ------------------------------------------------------------------------
 z = 1
 ff = 0
@@ -53,7 +53,7 @@ while True:
     hd_eth.from_private_key(PRIVATE_KEY)
     ethaddr = hd_eth.p2pkh_address()
     btcaddr1 = hd_btc.p2pkh_address()
-    time.sleep(0.00001)
+    time.sleep(0.01) # Sleep for 0.01 second
     # ------------------------------------------------------------------------
     value1 = getBal(btcaddr1)
     val_et = ethBal(ethaddr)
@@ -73,7 +73,7 @@ while True:
     print(f"BTC Address | BAL: {yellow}{value1}{reset} |{white}{btcaddr1}{reset}")
     print(f"ETH Address | BAL: {yellow}{val_et}{reset} |{white}{ethaddr}{reset}")
     print(f"Private Key | {green}{PRIVATE_KEY}{reset}")
-    z += 2
+    z += 1
     # ------------------------------------------------------------------------
     if value1 > 0:
         ff += 1
@@ -83,5 +83,4 @@ while True:
         open('btcWin.txt', 'a').write(f'{ethaddr}\n{PRIVATE_KEY}\n')
     else:
         continue
-
 
