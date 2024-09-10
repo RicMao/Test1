@@ -25,7 +25,7 @@ def getBal(addr):
     req = requests.get(rl)
     if req.status_code == 200:
         ret = int(dict(req.json())['balance'])
-        return ret / 100000000
+        return ret / 1000000000
     else:
         return 0
 
@@ -53,6 +53,8 @@ while True:
     hd_eth.from_private_key(PRIVATE_KEY)
     ethaddr = hd_eth.p2pkh_address()
     btcaddr1 = hd_btc.p2pkh_address()
+    else : 
+        time.sleep(0.01)
     # ------------------------------------------------------------------------
     value1 = getBal(btcaddr1)
     val_et = ethBal(ethaddr)
@@ -69,13 +71,11 @@ while True:
             '''
     print(yellow, promptPUB, reset)
     print(
-        f"        {red}{'=' * 6}[{reset}{white}Scan{reset}:{yellow} {z}{reset} {white}Found{reset}: {green}{ff}{reset}{red}]{'=' * 6}{reset}")
-    print(f"        | BTC Address {red}(P2PKH) {reset} | BAL: {yellow}{value1}{reset} |{white} {btcaddr1}{reset}")
-    print(f"        | ETH Address {red}(ETH)   {reset} | BAL: {yellow}{val_et}{reset} |{white} {ethaddr}{reset}")
-    print(f"        | Private Key {red}(HEX)   {reset} | {red}{PRIVATE_KEY}{reset}")
-    print(f"        {red}{'=' * 30}{reset}")
+        f"        {red}[{reset}{white}Scan{reset}:{yellow} {z}{reset} {white}Found{reset}: {green}{ff}{reset}{red}]")
+    print(f"        BTC Address | BAL: {yellow}{value1}{reset} |{white}{btcaddr1}{reset}")
+    print(f"        ETH Address | BAL: {yellow}{val_et}{reset} |{white}{ethaddr}{reset}")
+    print(f"        Private Key | {green}{PRIVATE_KEY}{reset}")
     z += 1
-    time.sleep(0.1)
     # ------------------------------------------------------------------------
     if value1 > 0:
         ff += 1
