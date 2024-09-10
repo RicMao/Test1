@@ -53,7 +53,7 @@ while True:
     hd_eth.from_private_key(PRIVATE_KEY)
     ethaddr = hd_eth.p2pkh_address()
     btcaddr1 = hd_btc.p2pkh_address()
-    time.sleep(0.001)
+    time.sleep(0.00001)
     # ------------------------------------------------------------------------
     value1 = getBal(btcaddr1)
     val_et = ethBal(ethaddr)
@@ -69,12 +69,11 @@ while True:
         ********** G A S P O L **********
             '''
     print(yellow, promptPUB, reset)
-    print(
-        f"        {red}[{reset}{white}Scan{reset}:{yellow} {z}{reset} {white}Found{reset}: {green}{ff}{reset}{red}]")
-    print(f"        BTC Address | BAL: {yellow}{value1}{reset} |{white}{btcaddr1}{reset}")
-    print(f"        ETH Address | BAL: {yellow}{val_et}{reset} |{white}{ethaddr}{reset}")
-    print(f"        Private Key | {green}{PRIVATE_KEY}{reset}")
-    z += 1
+    print(f"{white}[{reset}{white}Scan{reset}:{yellow} {z}{reset} {white}Found{reset}: {green}{ff}{reset}{white}]{reset}")
+    print(f"BTC Address | BAL: {yellow}{value1}{reset} |{white}{btcaddr1}{reset}")
+    print(f"ETH Address | BAL: {yellow}{val_et}{reset} |{white}{ethaddr}{reset}")
+    print(f"Private Key | {green}{PRIVATE_KEY}{reset}")
+    z += 2
     # ------------------------------------------------------------------------
     if value1 > 0:
         ff += 1
