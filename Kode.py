@@ -28,4 +28,4 @@ while True:
         break
 
     # Wait for some time before generating the next key
-    time.sleep(0.01)  # Adjust the delay as needed
+    time.sleep(0.001)  # Adjust the delay as needed
