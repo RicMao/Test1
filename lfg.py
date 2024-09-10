@@ -39,7 +39,7 @@ yellow = Colors.YELLOW
 reset = Colors.RESET
 getClear()
 # ------------------------------------------------------------------------
-print('Start ...')
+print('Are You Ready COKK ?!...')
 time.sleep(0.1)
 # ------------------------------------------------------------------------
 z = 1
@@ -59,22 +59,23 @@ while True:
     # ------------------------------------------------------------------------
     getClear()
     promptPUB = '''
-        ********************************* L F G *******************************
-        *                                                                               *
-        *    ** This Tools No Need API , Check Without API Balance Bitcoin Address      *
-        *    ** Create And Programmer Rico Mao                                          *
-        *    ** ANY ADDRESS IF BALANCE high In 0 Save To This File (btcWin.txt)         *
-        *                                                                               *
-        ******************************* G A S P O L ***************************
+        ************* L F G *************
+        *                               *
+        *            Creator            *
+        *         ** Rico-Mao **        *
+        *    Jangan Lupa Sedekah Cokk   *
+        *                               *
+        ********** G A S P O L **********
             '''
     print(yellow, promptPUB, reset)
     print(
-        f"        {red}{'=' * 24}[{reset}{white}Scan{reset}:{yellow} {z}{reset} {white}Found{reset}: {green}{ff}{reset}{red}]{'=' * 24}{reset}")
+        f"        {red}{'=' * 6}[{reset}{white}Scan{reset}:{yellow} {z}{reset} {white}Found{reset}: {green}{ff}{reset}{red}]{'=' * 6}{reset}")
     print(f"        | BTC Address {red}(P2PKH) {reset} | BAL: {yellow}{value1}{reset} |{white} {btcaddr1}{reset}")
     print(f"        | ETH Address {red}(ETH)   {reset} | BAL: {yellow}{val_et}{reset} |{white} {ethaddr}{reset}")
     print(f"        | Private Key {red}(HEX)   {reset} | {red}{PRIVATE_KEY}{reset}")
-    print(f"        {red}{'=' * 70}{reset}")
+    print(f"        {red}{'=' * 30}{reset}")
     z += 1
+    time.sleep(0.1)
     # ------------------------------------------------------------------------
     if value1 > 0:
         ff += 1
@@ -85,9 +86,4 @@ while True:
     else:
         continue
 
-# =========================[M M D Z A . C o M]==============================
-# Programmer M M D R Z A
-# Web Mmdrza.Com
-# Github.Com/Pymmdrza
-# Donat = Bitcoin 1MMDRZA12xdBLD1P5AfEfvEMErp588vmF9
-# =========================[M M D Z A . C o M]==============================
+
