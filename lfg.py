@@ -40,20 +40,17 @@ reset = Colors.RESET
 getClear()
 # ------------------------------------------------------------------------
 print('Are You Ready COKK ?!...')
-time.sleep(0.0001)
 # ------------------------------------------------------------------------
-z = 1
-ff = 0
 while True:
     PRIVATE_KEY = "".join(random.choice("0123456789abcdef") for _ in range(64))
-
+    time.sleep(0.1)
+    
     hd_btc: HDWallet = HDWallet(BTC)
     hd_eth: HDWallet = HDWallet(ETH)
     hd_btc.from_private_key(PRIVATE_KEY)
     hd_eth.from_private_key(PRIVATE_KEY)
     ethaddr = hd_eth.p2pkh_address()
     btcaddr1 = hd_btc.p2pkh_address()
-    time.sleep(0.01) # Sleep for 0.01 second
     # ------------------------------------------------------------------------
     value1 = getBal(btcaddr1)
     val_et = ethBal(ethaddr)
