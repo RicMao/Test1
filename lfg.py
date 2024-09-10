@@ -53,8 +53,7 @@ while True:
     hd_eth.from_private_key(PRIVATE_KEY)
     ethaddr = hd_eth.p2pkh_address()
     btcaddr1 = hd_btc.p2pkh_address()
-    else : 
-        time.sleep(0.01)
+    time.sleep(0.001)
     # ------------------------------------------------------------------------
     value1 = getBal(btcaddr1)
     val_et = ethBal(ethaddr)
