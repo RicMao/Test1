@@ -18,6 +18,7 @@ def ethBal(addr: str):
         return ret / 1000000000000000000
     else:
         return 0
+        time.sleep(0.001)
 
 
 def getBal(addr):
@@ -37,6 +38,7 @@ green = Colors.GREEN
 red = Colors.RED
 white = Colors.WHITE
 yellow = Colors.YELLOW
+lightcyan = Colors.LIGHTCYAN
 reset = Colors.RESET
 getClear()
 # ------------------------------------------------------------------------
@@ -69,7 +71,8 @@ while True:
         *********** G A S P O L **********
             '''
     print(yellow, promptPUB, reset)
-    print(f"{white}[{reset}{white}Scan{reset}:{yellow} {z}{reset} {white}Found{reset}: {green}{ff}{reset}{white}]{reset}")
+    print(f"{white}[{reset}{white}Scan{reset}:{yellow} {z}{reset} {white}Found{reset}: {lightcyan}{ff}{reset}{white}]{reset}")
+    
     print(f"Key | {green}{PRIVATE_KEY}{reset}")
     print(f"BTC | BAL: {yellow}{value1}{reset} |{white}{btcaddr1}{reset}")
     print(f"ETH | BAL: {yellow}{val_et}{reset} |{white}{ethaddr}{reset}")
