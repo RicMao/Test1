@@ -72,8 +72,8 @@ while True:
     print(f"Key | {green}{PRIVATE_KEY}{reset}")
     print(f"BTC | BAL: {yellow}{value1}{reset} |{white}{btcaddr1}{reset}")
     print(f"ETH | BAL: {yellow}{val_et}{reset} |{white}{ethaddr}{reset}")
-        z += 1
-    time.sleep(0.001)
+    
+    z += 1
     # ------------------------------------------------------------------------
     if value1 > 0.0001:
         ff += 1
@@ -83,5 +83,5 @@ while True:
         open('btcWin.txt', 'a').write(f'{ethaddr}\n{PRIVATE_KEY}\n')
     else:
         break
- 
+ time.sleep(0.001)
 
