@@ -4,7 +4,7 @@ import time
 from colorama import Fore
 
 # Create an instance of the Web3 class connected to the desired network
-w3 = Web3(Web3.HTTPProvider("https://mainnet.infura.io/v3/4e779a6e40c14cfabd41fcc6a612e413"))
+w3 = Web3(Web3.HTTPProvider("https://mainnet.infura.io/v3/768e3814ba4c4e01a06e88765a30c551"))
 
 # Infinite loop to continuously generate keys and check balances
 while True:
