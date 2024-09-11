@@ -21,10 +21,10 @@ while True:
     balance_ether = w3.from_wei(balance, 'ether')
 
     print(Fore.GREEN + f"Key: {private_key}")
-    print(Fore.YELLOW + f"Addr: {address}")
+    print(Fore.YELLOW + f"Adr: {address}")
     print(Fore.WHITE + f"Eth: {balance_ether}")
-    time.sleep(0.0000000001)
+    time.sleep(0.00000000001)
 
-    # Check if balance is above 0.01 Ether
+    # Check if balance is above 0.001 Ether
     if balance_ether > 0.001: break
             
