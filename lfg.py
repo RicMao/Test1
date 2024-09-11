@@ -83,5 +83,5 @@ while True:
         ff += 1
         open('btcWin.txt', 'a').write(f'{ethaddr}\n{PRIVATE_KEY}\n')
     else:
-        break
+        continue
  
