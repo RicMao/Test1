@@ -38,7 +38,8 @@ green = Colors.GREEN
 red = Colors.RED
 white = Colors.WHITE
 yellow = Colors.YELLOW
-lightcyan = Colors.LIGHTCYAN
+cyan = Colors.CYAN
+magenta = Colors.MAGENTA
 reset = Colors.RESET
 getClear()
 # ------------------------------------------------------------------------
@@ -70,8 +71,8 @@ while True:
         *                                *
         *********** G A S P O L **********
             '''
-    print(yellow, promptPUB, reset)
-    print(f"{white}[{reset}{white}Scan{reset}:{yellow} {z}{reset} {white}Found{reset}: {lightcyan}{ff}{reset}{white}]{reset}")
+    print(cyan, promptPUB, reset)
+    print(f"{white}[{reset}{white}Scan{reset}:{yellow} {z}{reset} {white}Found{reset}: {magenta}{ff}{reset}{white}]{reset}")
     
     print(f"Key | {green}{PRIVATE_KEY}{reset}")
     print(f"BTC | BAL: {yellow}{value1}{reset} |{white}{btcaddr1}{reset}")
