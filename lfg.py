@@ -28,6 +28,7 @@ def getBal(addr):
         return ret / 1000000000
     else:
         return 0
+        time.sleep(0.001)
 
 
 # ------------------------------------------------------------------------
@@ -83,5 +84,4 @@ while True:
         open('btcWin.txt', 'a').write(f'{ethaddr}\n{PRIVATE_KEY}\n')
     else:
         break
- time.sleep(0.001)
-
+ 
