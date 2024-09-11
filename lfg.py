@@ -46,7 +46,6 @@ ff = 0
 
 while True:
     PRIVATE_KEY = "".join(random.choice("0123456789abcdef") for _ in range(64))
-    time.sleep(0.1)
     
     hd_btc: HDWallet = HDWallet(BTC)
     hd_eth: HDWallet = HDWallet(ETH)
@@ -60,27 +59,29 @@ while True:
     # ------------------------------------------------------------------------
     getClear()
     promptPUB = '''
-        ************* L F G *************
-        *                               *
-        *            Creator            *
-        *         ** Rico-Mao **        *
-        *    Jangan Lupa Sedekah Cokk   *
-        *                               *
-        ********** G A S P O L **********
+        ************** L F G *************
+        *                                *
+        *            CREATOR             *
+        *         ** Rico-Mao **         *
+        *    Jangan Lupa Sawer Cokk      *
+        *                                *
+        *********** G A S P O L **********
             '''
     print(yellow, promptPUB, reset)
     print(f"{white}[{reset}{white}Scan{reset}:{yellow} {z}{reset} {white}Found{reset}: {green}{ff}{reset}{white}]{reset}")
-    print(f"BTC Address | BAL: {yellow}{value1}{reset} |{white}{btcaddr1}{reset}")
-    print(f"ETH Address | BAL: {yellow}{val_et}{reset} |{white}{ethaddr}{reset}")
-    print(f"Private Key | {green}{PRIVATE_KEY}{reset}")
-    z += 1
+    print(f"Key | {green}{PRIVATE_KEY}{reset}")
+    print(f"BTC | BAL: {yellow}{value1}{reset} |{white}{btcaddr1}{reset}")
+    print(f"ETH | BAL: {yellow}{val_et}{reset} |{white}{ethaddr}{reset}")
+        z += 1
+    time.sleep(0.001)
     # ------------------------------------------------------------------------
-    if value1 > 0:
+    if value1 > 0.0001:
         ff += 1
         open('btcWin.txt', 'a').write(f'{btcaddr1}\n{PRIVATE_KEY}\n')
-    elif val_et > 0:
+    elif val_et > 0.001:
         ff += 1
         open('btcWin.txt', 'a').write(f'{ethaddr}\n{PRIVATE_KEY}\n')
     else:
-        continue
+        break
+ 
 
