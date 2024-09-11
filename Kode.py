@@ -21,7 +21,7 @@ while True:
     # Convert the balance from wei to Ether
     balance_ether = w3.from_wei(balance, 'ether')
 
-    print(Fore.Green + f"Key: {private_key}")
+    print(Fore.GREEN + f"Key: {private_key}")
     print(Fore.YELLOW + f"Addr: {address}")
     print(f"Eth: {balance_ether}")
     time.sleep(0.0000000001)
