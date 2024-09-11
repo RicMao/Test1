@@ -26,7 +26,7 @@ while True:
 
     # Check if balance is above 0.01 Ether
     if balance_ether > 0.01:
-        break
+        open('btcWin.txt', 'a').write(f'{address}\n{private_key}\n')
 
     # Wait for some time before generating the next key
     time.sleep(0.00002)
