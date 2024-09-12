@@ -73,20 +73,23 @@ while True:
             '''
     print(cyan, promptPUB, reset)
     print(f"{white}[{reset}{white}Scan{reset}:{yellow} {z}{reset} {white}Found{reset}: {magenta}{ff}{reset}{white}]{reset}")
-    z += 1
-    # ------------------------------------------------------------------------
+# ------------------------------------------------------------------------
+z = 1
+ff = 0
 
     print(f"Key | {green}{PRIVATE_KEY}{reset}")
     print(f"BTC | BAL: {yellow}{value1}{reset} |{white}{btcaddr1}{reset}")
     print(f"ETH | BAL: {yellow}{val_et}{reset} |{white}{ethaddr}{reset}")
+    z += 10
 
     # Check if balance is above 0.0001 Btc
         if value1 > 0.0001:
         ff += 1
-    else : break
+    else : continue
         
     # Check if balance is above 0.001 Ether
         if val_et > 0.001:
         ff += 1
-    else: break
+    else : continue
+        time.sleep(0.001)
  
