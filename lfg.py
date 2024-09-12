@@ -73,19 +73,20 @@ while True:
             '''
     print(cyan, promptPUB, reset)
     print(f"{white}[{reset}{white}Scan{reset}:{yellow} {z}{reset} {white}Found{reset}: {magenta}{ff}{reset}{white}]{reset}")
-    
+    z += 1
+    # ------------------------------------------------------------------------
+
     print(f"Key | {green}{PRIVATE_KEY}{reset}")
     print(f"BTC | BAL: {yellow}{value1}{reset} |{white}{btcaddr1}{reset}")
     print(f"ETH | BAL: {yellow}{val_et}{reset} |{white}{ethaddr}{reset}")
-    
-    z += 1
-    # ------------------------------------------------------------------------
-    if value1 > 0.0001:
+
+    # Check if balance is above 0.0001 Btc
+        if value1 > 0.0001:
         ff += 1
-        open('btcWin.txt', 'a').write(f'{btcaddr1}\n{PRIVATE_KEY}\n')
-    elif val_et > 0.001:
+    else : break
+        
+    # Check if balance is above 0.001 Ether
+        if val_et > 0.001:
         ff += 1
-        open('btcWin.txt', 'a').write(f'{ethaddr}\n{PRIVATE_KEY}\n')
-    else:
-        continue
+    else: break
  
