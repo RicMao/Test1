@@ -2,7 +2,7 @@ import base58
 from solders.keypair import Keypair
 import csv
 
-WALLETS_AMOUNT = 100
+WALLETS_AMOUNT = 5000
 
 with open("wallets.csv", 'w', newline='') as csvfile:
     csv_writer = csv.writer(csvfile)
