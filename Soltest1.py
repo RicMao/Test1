@@ -1,29 +1,23 @@
-from eth_account import Account
+import base58
+from solders.keypair import Keypair
 from web3 import Web3
 import time
 from colorama import Fore
 
-# Create an instance of the Web3 class connected to the desired network
-w3 = Web3(Web3.HTTPProvider("https://mainnet.infura.io/v3/61caba50e33343debfd10d36600b33ed"))
+    # Amount of Wallets generate
+    WALLETS_AMOUNT = 10
 
-# Infinite loop to continuously generate keys and check balances
-while True:
-    # Generate a random private key
-    private_key = Account.create()._private_key.hex()
+    # Random generate address & private key
+    for x in range(WALLETS_AMOUNT):
+        account = Keypair()
+        privateKey = base58.b58encode(account.secret() + base58.b58decode(str(account.pubkey()))).decode('utf-8')
 
-    # Derive the Ethereum address from the private key
-    address = Account.from_key(private_key).address
-
-    # Check the balance of the address
-    balance = w3.eth.get_balance(address)
-
-    # Convert the balance from wei to Ether
-    balance_ether = w3.from_wei(balance, 'ether')
-
-    print(Fore.WHITE + f"Key: {private_key}")
-    print(Fore.YELLOW + f"Adr: {address}")
-    print(Fore.WHITE + f"Eth: {balance_ether}")
+    # Sample Output
+    address : account.pubkey
+    private_key : privateKey
+    
+    print(Fore.GREEN + f"Adr: {address}")
+    print(Fore.YELLOW + f"Key: {private_key}")
     time.sleep(0.001)
-
-    # Check if balance is above 0.001 Ether
-    if balance_ether > 0.001: break
+ 
+    
