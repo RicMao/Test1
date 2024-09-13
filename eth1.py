@@ -26,5 +26,5 @@ while True:
     time.sleep(0.001)
 
     # Check if balance is above 0.001 Ether
-    if balance_ether > 0.001: print(Fore.GREEN + "FOUND!!: ALHAMDULILLAH", break)
+    if balance_ether > 0.001: break
             
