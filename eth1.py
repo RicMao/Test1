@@ -23,9 +23,8 @@ while True:
     print(Fore.GREEN + f"Key: {private_key}")
     print(Fore.YELLOW + f"Adr: {address}")
     print(Fore.WHITE + f"Eth: {balance_ether}")
-    time.sleep(0.00000000001)
+    time.sleep(0.001)
 
     # Check if balance is above 0.001 Ether
-    if balance_ether > 0.001: print(Fore.GREEN + "FOUND!!: ALHAMDULILLAH")
-    break
+    if balance_ether > 0.001: print(Fore.GREEN + "FOUND!!: ALHAMDULILLAH") break
             
