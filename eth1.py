@@ -27,6 +27,6 @@ while True:
 
     # Check if balance is above 0.001 Ether
     if balance_ether > 0.001: 
-        print(Fore.GREEN + f"======ALHAMDULILLAH======")
-            break
+    print(Fore.GREEN + f"ALHAMDULILLAH")
+    break
             
