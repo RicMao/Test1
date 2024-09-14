@@ -1,40 +1,74 @@
-from eth_keys import keys
-from eth_utils import decode_hex, encode_hex, keccak
-from web3 import Web3
-import time
-from colorama import Fore
 
-# Create an instance of the Web3 class connected to the desired network
-w3 = Web3(Web3.HTTPProvider("https://mainnet.infura.io/v3/768e3814ba4c4e01a06e88765a30c551"))
 
-def private_key_to_address(private_key_hex):
-    # Ensure the private key is a valid hex string
-    if private_key_hex.startswith('0x'):
-        private_key_hex = private_key_hex[2:]
-    
-    # Convert the hex private key to bytes
-    private_key_bytes = bytes.fromhex(private_key_hex)
-    
-    # Create a PrivateKey object
-    private_key = keys.PrivateKey(private_key_bytes)
-    
-    # Derive the public key from the private key
-    public_key = private_key.public_key
-    
-    # Get the public key bytes and skip the first byte (which is 0x04)
-    public_key_bytes = public_key.to_bytes()[1:]
-    
-    # Compute the Keccak-256 hash of the public key bytes
-    keccak_hash = keccak(public_key_bytes)
-    
-    # The Ethereum address is the last 20 bytes of this hash
-    address_bytes = keccak_hash[-20:]
-    
-    # Convert the address bytes to a hexadecimal string and prepend '0x'
-    address = '0x' + address_bytes.hex()
-    return address
+from eth_account import Account
+import os
+import sys
+from secrets import token_bytes
+from tqdm import tqdm
+import math
 
-# Example usage
-private_key_hex = '0x0000000000000000000000000000000000000000000000000000000000000001'
-eth_address = private_key_to_address(private_key_hex)
-print("Ethereum Address:", eth_address)
+def generate_ethereum_wallet(existing_addresses):
+    while True:
+        private_key = token_bytes(32).hex()
+        account = Account.from_key(private_key)
+        address = account.address.lower()[2:]
+        if address not in existing_addresses:
+            existing_addresses.add(address)
+            return address, private_key
+
+def load_addresses(filename="sukses.txt"):
+    addresses_set = set()
+    try:
+        print(f"Loading addresses from {filename}...")
+        with open(filename, "r", encoding="latin-1") as file:
+            addresses_set.update(line.strip().lower() for line in file)
+    except (UnicodeDecodeError, FileNotFoundError) as e:
+        print(f"Error loading addresses from {filename}: {e}")
+        sys.exit(1)
+    return addresses_set
+
+def check_and_save_match(formatted_address, private_key, output_filename="matches.txt"):
+    with open(output_filename, "a", encoding="utf-8") as output_file:
+        output_file.write(f"Match Found\n"
+                          f"  Address: {formatted_address}\n"
+                          f"  Private Key: {private_key}\n\n")
+
+def generate_and_check_addresses(args, max_matches=10):
+    addresses_set, existing_addresses = args
+    matches_found = 0
+    try:
+        with tqdm(desc="Processing", unit=" address", ncols=100, dynamic_ncols=True) as progress_bar:
+            speed_multiplier = math.sqrt(len(addresses_set))  # Adjust speed based on the number of loaded addresses
+            while matches_found < max_matches:
+                formatted_address, private_key = generate_ethereum_wallet(existing_addresses)
+
+                # Add additional actions if needed
+                if formatted_address in addresses_set:
+                    check_and_save_match(formatted_address, private_key)
+                    matches_found += 1
+
+                progress_bar.update(speed_multiplier)  # Update progress bar with adjusted speed
+
+    except KeyboardInterrupt:
+        print("\nScript stopped by the user.")
+        sys.exit(0)
+
+def main():
+    addresses_set = load_addresses()
+    if not addresses_set:
+        print("No addresses loaded. Exiting.")
+        sys.exit(1)
+
+    print(f"Loaded {len(addresses_set)} addresses from the file.")
+
+    try:
+        existing_addresses = set()
+        args = (addresses_set, existing_addresses)
+        generate_and_check_addresses(args)
+
+    except KeyboardInterrupt:
+        print("\nScript stopped by the user.")
+        sys.exit(0)
+
+if __name__ == "__main__":
+    main()
