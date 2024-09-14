@@ -1,4 +1,3 @@
-from secret import token_bytes
 from eth_keys import keys
 from eth_utils import decode_hex, encode_hex, keccak
 from web3 import Web3
