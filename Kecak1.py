@@ -1,6 +1,6 @@
 from secrets import token_bytes
 from coincurve import PublicKey
-from sha3 import keccak_256
+from pysha3 import keccak_256
 from web3 import Web3
 import time
 from colorama import Fore
