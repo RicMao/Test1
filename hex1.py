@@ -13,5 +13,5 @@ def generate_private_key():
     return private_key
 
 private_key = generate_private_key()
-print("Private_Key :" private_key.hex())
+print("Private_Key :",private_key.hex())
 
