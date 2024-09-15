@@ -1,6 +1,6 @@
 from ecpy.curves import Curve
 from ecpy.keys import ECPublicKey, ECPrivateKey
-from sha3 import keccak_256
+from pysha3 import keccak_256
 
 private_key = 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80
 
