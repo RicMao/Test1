@@ -16,7 +16,7 @@ while True:
     return random_key
 
 random_key = generate_private_key()
-private_key = random_key.hex())
+private_key = random_key.hex()
     
     # Derive the Ethereum address from the private key
     address = Account.from_key(private_key).address
