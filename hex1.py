@@ -11,8 +11,6 @@ w3 = Web3(Web3.HTTPProvider("https://mainnet.infura.io/v3/768e3814ba4c4e01a06e88
 while True:
     # Generate a random private key
     generate_private_key = secrets.token_bytes(32)
-    return private_key
-    
     private_key = generate_private_key("private_key.hex()")
     
     # Derive the Ethereum address from the private key
