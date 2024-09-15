@@ -12,24 +12,6 @@ def generate_private_key():
     private_key = secrets.token_bytes(32)
     return private_key
 
-private_key = generate_private_key(), "hex()".private_key
+private_key = generate_private_key()
+print(f"Private_Key : private_key.hex())
 
-# Infinite loop to continuously generate keys and check balances
-while True:
-    
-    # Derive the Ethereum address from the private key
-    address = Account.from_key(private_key).address
-
-    # Check the balance of the address
-    balance = w3.eth.get_balance(address)
-
-    # Convert the balance from wei to Ether
-    balance_ether = w3.from_wei(balance, 'ether')
-
-    print(Fore.GREEN + f"Key: {private_key}")
-    print(Fore.YELLOW + f"Adr: {address}")
-    print(Fore.WHITE + f"Eth: {balance_ether}")
-    time.sleep(0.001)
-
-    # Check if balance is above 0.001 Ether
-    if balance_ether > 0.001: break
