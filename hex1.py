@@ -12,7 +12,7 @@ def generate_private_key():
     private_key = secrets.token_bytes(32)
     return private_key
 
-private_key = (generate_private_key(), "hex()")
+private_key = generate_private_key(), "hex()".private_key
 
 # Infinite loop to continuously generate keys and check balances
 while True:
