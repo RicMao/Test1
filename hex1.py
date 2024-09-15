@@ -7,10 +7,15 @@ from colorama import Fore
 # Create an instance of the Web3 class connected to the desired network
 w3 = Web3(Web3.HTTPProvider("https://mainnet.infura.io/v3/768e3814ba4c4e01a06e88765a30c551"))
 
+def generate_private_key():
+    # Generate a random 32-byte (256-bit) private key
+    private_key = secrets.token_bytes(32)
+    return private_key
+
+private_key = (generate_private_key(), "hex()")
+
 # Infinite loop to continuously generate keys and check balances
 while True:
-    # Generate a random private key
-    private_key = secrets.token_bytes(32), hex()
     
     # Derive the Ethereum address from the private key
     address = Account.from_key(private_key).address
