@@ -10,13 +10,7 @@ w3 = Web3(Web3.HTTPProvider("https://mainnet.infura.io/v3/768e3814ba4c4e01a06e88
 # Infinite loop to continuously generate keys and check balances
 while True:
     # Generate a random private key
-    def generate_private_key():
-    # Generate a random 32-byte (256-bit) private key
-    random_key = secrets.token_bytes(32)
-    return random_key
-
-random_key = generate_private_key()
-private_key = random_key.hex()
+    private_key = secrets.token_bytes(32), hex()
     
     # Derive the Ethereum address from the private key
     address = Account.from_key(private_key).address
