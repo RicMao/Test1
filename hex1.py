@@ -12,8 +12,8 @@ while True:
     # Generate a random private key
     def generate_private_key():
     # Generate a random 32-byte (256-bit) private key
-    private_key = secrets.token_bytes(32)
-    return private_key
+    random_key = secrets.token_bytes(32)
+    return random_key
 
 random_key = generate_private_key()
 private_key = random_key.hex())
