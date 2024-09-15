@@ -1,5 +1,4 @@
 import secrets
-def hex_to_wif(hex_private_key):
 
 def generate_private_key():
     # Generate a random 32-byte (256-bit) private key
