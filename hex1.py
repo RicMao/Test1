@@ -1,34 +1,33 @@
 import secrets
+from eth_account import Account
+from web3 import Web3
+import time
+from colorama import Fore
 
-def generate_private_key():
-    # Generate a random 32-byte (256-bit) private key
-    private_key = secrets.token_bytes(32)
+# Create an instance of the Web3 class connected to the desired network
+w3 = Web3(Web3.HTTPProvider("https://mainnet.infura.io/v3/768e3814ba4c4e01a06e88765a30c551"))
+
+# Infinite loop to continuously generate keys and check balances
+while True:
+    # Generate a random private key
+    generate_private_key = secrets.token_bytes(32)
     return private_key
+    
+    private_key = generate_private_key("private_key.hex()")
+    
+    # Derive the Ethereum address from the private key
+    address = Account.from_key(private_key).address
 
-private_key = generate_private_key()
-print("Generated Private Key:", private_key.hex())
+    # Check the balance of the address
+    balance = w3.eth.get_balance(address)
 
-import base58
-import hashlib
+    # Convert the balance from wei to Ether
+    balance_ether = w3.from_wei(balance, 'ether')
 
-def hex_to_wif(hex_private_key):
-    # Add the prefix byte '80' to indicate the mainnet private key
-    extended_key = '80' + hex_private_key
-    
-    # Double SHA-256 hash the extended private key
-    first_hash = hashlib.sha256(bytes.fromhex(extended_key)).digest()
-    second_hash = hashlib.sha256(first_hash).digest()
-    
-    # Take the first 4 bytes of the second hash as checksum
-    checksum = second_hash[:4]
-    
-    # Add the checksum to the end of the extended private key
-    extended_key += checksum.hex()
-    
-    # Encode the extended private key with base58 encoding
-    wif = base58.b58encode(bytes.fromhex(extended_key)).decode()
-    
-    return wif
+    print(Fore.GREEN + f"Key: {private_key}")
+    print(Fore.YELLOW + f"Adr: {address}")
+    print(Fore.WHITE + f"Eth: {balance_ether}")
+    time.sleep(0.001)
 
-wif = hex_to_wif(private_key.hex())
-print("Converted HEX to WIF:", wif)
+    # Check if balance is above 0.001 Ether
+    if balance_ether > 0.001: break
