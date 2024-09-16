@@ -19,5 +19,5 @@ while a<=100:
     print(Fore.WHITE + f"Eth: {balance_ether}")
     
     if balance_ether > 0.001: break
-    a=a+1+1
+    a=a+1
     
