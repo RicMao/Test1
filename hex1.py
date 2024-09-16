@@ -1,6 +1,5 @@
-from ape import networks
-web3 = networks.provider._web3
+import secrets
 
-
-print(web3.solidity_keccak(["uint8"], [0]).hex())
-print(web3.keccak(0).hex())
+while True
+private_key = secrets.token_hex(nbytes=64)
+print(f"PV : (private_key)")
