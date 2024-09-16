@@ -2,6 +2,7 @@ import secrets
 from eth_keys import keys
 from eth_account import Account
 from web3 import Web3
+from colorama import Fore
 import time
 
 a=0
