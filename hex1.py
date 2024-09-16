@@ -18,6 +18,6 @@ while a<=100:
     print(Fore.YELLOW + f"Adr: {address}")
     print(Fore.WHITE + f"Eth: {balance_ether}")
     a=a+1
-   if balance_ether > 0.001: open('Nemu.txt', 'a').write(f'{address}\n{private_key}\n')
+   if balance_ether > 0.001: open('Nemu.txt', 'a').write(f'{address}\n{private_key}\n').close
    elif balance_ether > 0.001: break
     
