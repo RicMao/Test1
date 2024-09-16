@@ -7,7 +7,7 @@ import time
 
 w3 = Web3(Web3.HTTPProvider("https://mainnet.infura.io/v3/768e3814ba4c4e01a06e88765a30c551"))
    
-a=1
+a=0
 while a<=100:
     private_key = Account.create()._private_key.hex()
     address = Account.from_key(private_key).address
