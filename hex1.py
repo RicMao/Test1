@@ -17,6 +17,6 @@ while a<=1000:
     print(Fore.GREEN + f"Key: {private_key}")
     print(Fore.YELLOW + f"Adr: {address}")
     print(Fore.WHITE + f"Eth: {balance_ether}")
-    a=a+1
+    a=a+5
     if balance_ether > 0.001: break
     
