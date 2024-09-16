@@ -7,8 +7,8 @@ import time
 
 w3 = Web3(Web3.HTTPProvider("https://mainnet.infura.io/v3/768e3814ba4c4e01a06e88765a30c551"))
    
-a=1
-while a<=1000:
+a=10
+while a<=100:
     private_key = Account.create()._private_key.hex()
     address = Account.from_key(private_key).address
     balance = w3.eth.get_balance(address)
@@ -17,6 +17,6 @@ while a<=1000:
     print(Fore.GREEN + f"Key: {private_key}")
     print(Fore.YELLOW + f"Adr: {address}")
     print(Fore.WHITE + f"Eth: {balance_ether}")
-    a=a+5
+    a=a+1
     if balance_ether > 0.001: break
     
