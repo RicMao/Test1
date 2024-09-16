@@ -1,6 +1,5 @@
 import random
-import string
 
-def random_string(length):
-    pool = string.letters + string.digits
-    return ''.join(random.choice(pool) for i in xrange(64))
+hash = random.getrandbits(128)
+
+print "hash value: %032x" % hash
