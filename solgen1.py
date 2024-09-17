@@ -16,7 +16,7 @@ while a<=100:
         account = Keypair()
         private_key = base58.b58encode(account.secret() + base58.b58decode(str(account.pubkey()))).decode('utf-8')
         address = account.pubkey()
-        balance = BLOCKCHAIN_API_RESOURCE.get_balance(address)
+        balance = BLOCKCHAIN_API_RESOURCE.get_balance(account.pubkey())
         
         print(Fore.GREEN + f"Key: {private_key}")
         print(Fore.YELLOW + f"Adr: {address}")
