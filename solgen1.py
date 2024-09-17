@@ -6,14 +6,14 @@ from colorama import Fore
 API_KEY = "s1hf0noqjvgHTyH"
 SECRET_KEY = "WWVuY33eR8s3sby"
 
-resource = SolanaAPIResource(api_key_id=API_KEY, api_secret_key=SECRET_KEY)
+resource = SolanaAPIResource(api_key_id=API_KEY, api_secret_key=SECRET_KEY, unit=SolanaCurrencyUnit.SOL)
 
 a=0
 while a<=100:
         account = Keypair()
         private_key = base58.b58encode(account.secret() + base58.b58decode(str(account.pubkey()))).decode('utf-8')
         address = account.pubkey()
-        balance = resource.get_balance(address).unit=SolanaCurrencyUnit.SOL)
+        balance = resource.get_balance(address)
             
         print(Fore.GREEN + f"Key: {private_key}")
         print(Fore.YELLOW + f"Adr: {address}")
