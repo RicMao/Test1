@@ -12,7 +12,7 @@ a=0
 while a<=100:
         account = Keypair()
         private_key = base58.b58encode(account.secret() + base58.b58decode(str(account.pubkey()))).decode('utf-8')
-        address = str(account.pubkey()).decode('utf-8')
+        address = str(account.pubkey()).encode('utf-8')
         balance = resource.get_balance(address, unit=SolanaCurrencyUnit.SOL, network=SolanaNetwork.MAINNET_BETA)
             
         print(Fore.GREEN + f"Key: {private_key}")
