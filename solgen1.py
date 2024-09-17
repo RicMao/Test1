@@ -6,7 +6,7 @@ from colorama import Fore
 API_KEY = "s1hf0noqjvgHTyH"
 SECRET_KEY = "WWVuY33eR8s3sby"
 
-def resource = TheBlockChainAPIResource(
+resource = TheBlockChainAPIResource(
     api_key_id=API_KEY,
     api_secret_key=SECRET_KEY
 )
