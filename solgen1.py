@@ -3,12 +3,13 @@ from solders.keypair import Keypair
 from theblockchainapi import SolanaAPIResource, SolanaCurrencyUnit, SolanaMintAddresses, SolanaNetwork, SolanaWallet
 from colorama import Fore
 
-MY_API_KEY_ID = "s1hf0noqjvgHTyH"
-MY_API_SECRET_KEY = "WWVuY33eR8s3sby"
+API_KEY = "s1hf0noqjvgHTyH"
+SECRET_KEY = "WWVuY33eR8s3sby"
 
-BLOCKCHAIN_API_RESOURCE = SolanaAPIResource(
-    api_key_id=MY_API_KEY_ID,
-    api_secret_key=MY_API_SECRET_KEY
+if __name__ == '__main__':
+resource = TheBlockChainAPIResource(
+    api_key_id=API_KEY,
+    api_secret_key=SECRET_KEY
 )
 
 a=0
