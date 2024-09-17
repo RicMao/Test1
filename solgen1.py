@@ -11,6 +11,7 @@ BLOCKCHAIN_API_RESOURCE = SolanaAPIResource(
     api_secret_key=MY_API_SECRET_KEY
 )
 
+while True :
         account = Keypair()
         private_key = base58.b58encode(account.secret() + base58.b58decode(str(account.pubkey()))).decode('utf-8')
         address = account.pubkey()
