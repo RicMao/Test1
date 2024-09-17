@@ -6,10 +6,7 @@ from colorama import Fore
 API_KEY = "s1hf0noqjvgHTyH"
 SECRET_KEY = "WWVuY33eR8s3sby"
 
-resource = SolanaAPIResource(
-        api_key_id=API_KEY, 
-        api_secret_key=SECRET_KEY
-)
+resource = SolanaAPIResource(api_key_id=API_KEY, api_secret_key=SECRET_KEY)
 
 a=0
 while a<=100:
