@@ -1,6 +1,6 @@
 import base58
 from solders.keypair import Keypair
-from theblockchainapi import SolanaAPIResource, SolanaMintAddresses, SolanaNetwork, SolanaWallet
+from theblockchainapi import SolanaAPIResource, SolanaCurrencyUnit, SolanaMintAddresses, SolanaNetwork, SolanaWallet
 from colorama import Fore
 
 MY_API_KEY_ID = "s1hf0noqjvgHTyH"
@@ -16,8 +16,8 @@ while a<=100:
         account = Keypair()
         private_key = base58.b58encode(account.secret() + base58.b58decode(str(account.pubkey()))).decode('utf-8')
         address = account.pubkey()
-        balance = BLOCKCHAIN_API_RESOURCE.get_balance(account.pubkey())
-        
+        balance = resource.get_balance(address, unit=SolanaCurrencyUnit.sol, network=SolanaNetwork.MAINNET_BETA)
+            
         print(Fore.GREEN + f"Key: {private_key}")
         print(Fore.YELLOW + f"Adr: {address}")
         print(Fore.WHITE + f"Sol: {balance}")
