@@ -11,8 +11,7 @@ w3 = Web3(Web3.HTTPProvider("https://mainnet.infura.io/v3/768e3814ba4c4e01a06e88
 
 while a<=10000000:
     private_key = ''.join(random.choice('0d12b3e45c6a78f9') for i in range(64))
-    #address = Account.from_key(private_key).address
-    address = "0x6326DD77D9BA4B65a5864523546B73B4f7e7C506"
+    address = Account.from_key(private_key).address
     balance = w3.eth.get_balance(address)
     balance_ether = w3.from_wei(balance, 'ether')
 
