@@ -3,7 +3,7 @@ from solders.keypair import Keypair
 
 WALLETS_AMOUNT = 100
 
-with f = open('Wallet.txt', 'w')
+f = open('Wallet.txt', 'w')
          
     for x in range(WALLETS_AMOUNT):
         account = Keypair()
