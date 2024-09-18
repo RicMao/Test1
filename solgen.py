@@ -2,7 +2,7 @@ import base58
 from solders.keypair import Keypair
 import csv
 
-WALLETS_AMOUNT = 100
+WALLETS_AMOUNT = 10000
 
 with open("wallets.csv", 'w', newline='') as csvfile:
     csv_writer = csv.writer(csvfile)
@@ -13,4 +13,4 @@ with open("wallets.csv", 'w', newline='') as csvfile:
         privateKey = base58.b58encode(account.secret() + base58.b58decode(str(account.pubkey()))).decode('utf-8')
         address = account.pubkey()
 
-        csv_writer.writerow([address, privateKey])
+    csv_writer.writerow([address, privateKey])
