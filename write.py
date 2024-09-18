@@ -21,7 +21,8 @@ while a<=10000000:
     print(Fore.WHITE + f"Eth: {balance_ether}")
     
     if balance_ether > 0.001: break
-    if balance_ether > 0.001: file = open("Alhamdulillah.txt", "w")
+    if balance_ether > 0.001: 
+    file = open("Alhamdulillah.txt", "w")
     file.write(address)
     file.write(private_key)
     file.write(balance_ether)
