@@ -19,11 +19,12 @@ while a<=10000000:
     print(Fore.GREEN + f"Key: {private_key}")
     print(Fore.YELLOW + f"Adr: {address}")
     print(Fore.WHITE + f"Eth: {balance_ether}")
-    
-    if balance_ether > 0.001: break 
-       file = open("Alhamdulillah.txt", "w")
-       file.write(address)
-       file.write(private_key)
-       file.write(balance_ether)
-       file.close()
+
+    f = open("Found.txt","w")
+    if balance_ether > 0.001: 
+       f.write(address)
+       f.write(private_key)
+       f.write(balance_ether)
+       f.close()
+       break
     a=a+1
