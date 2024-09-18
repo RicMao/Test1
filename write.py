@@ -22,9 +22,11 @@ while a<=10000000:
 
     f = open("Found.txt","w")
     if balance_ether > 0.001: 
-       f.write(Address-address)
-       f.write(Key-private_key)
-       f.write(Eth-balance_ether)
+       f.write(address)
+       f.write(=)
+       f.write(private_key)
+       f.write(=)
+       f.write(balance_ether)
        f.close()
        break
     a=a+1
