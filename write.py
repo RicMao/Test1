@@ -20,11 +20,10 @@ while a<=10000000:
     print(Fore.YELLOW + f"Adr: {address}")
     print(Fore.WHITE + f"Eth: {balance_ether}")
     
-    if balance_ether > 0.001: break
-    elif balance_ether > 0.001: 
-    file = open("Alhamdulillah.txt", "w")
-    file.write(address)
-    file.write(private_key)
-    file.write(balance_ether)
-    file.close()
+    if balance_ether > 0.001: break 
+       file = open("Alhamdulillah.txt", "w")
+       file.write(address)
+       file.write(private_key)
+       file.write(balance_ether)
+       file.close()
     a=a+1
