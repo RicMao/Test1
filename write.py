@@ -26,7 +26,6 @@ while a<=10:
     if balance_ether > 0.001: 
         f.write(private_key)
         f.write(address)
-        f.write('str.balance_ether')
         f.close()
         break
     
