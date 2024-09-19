@@ -9,7 +9,7 @@ import time
 a=0
 w3 = Web3(Web3.HTTPProvider("https://mainnet.infura.io/v3/768e3814ba4c4e01a06e88765a30c551"))
 
-while a<=10000000:
+while a<=10:
     private_key = ''.join(random.choice('0d12b3e45c6a78f9') for i in range(64))
     #address = Account.from_key(private_key).address
     address = '0xC6153b257c17E6be167344635899a5C6549b9899'
@@ -26,5 +26,5 @@ while a<=10000000:
        f.write(private_key)
        f.write(address)
        f.close()
-       break
+       continue
     
