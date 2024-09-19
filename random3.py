@@ -19,10 +19,5 @@ while a<=10000000:
     print(Fore.YELLOW + f"Adr: {address}")
     print(Fore.WHITE + f"Eth: {balance_ether}")
     
-    f = open("hack3.txt","w")
-    if balance_ether > 0.001: 
-       f.write(private_key)
-       f.write(address)
-       f.close()
-       break
+    if balance_ether > 0.001: break
     a=a+1
