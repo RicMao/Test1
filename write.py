@@ -27,5 +27,5 @@ while a<=10:
        f.write(address)
        f.save()
        f.close()
-       continue
+       break
     
