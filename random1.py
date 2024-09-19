@@ -18,6 +18,8 @@ while a<=10000000:
     print(Fore.GREEN + f"Key: {private_key}")
     print(Fore.YELLOW + f"Adr: {address}")
     print(Fore.WHITE + f"Eth: {balance_ether}")
+
+    if balance_ether > 0.001: 
+    break
+    a=a+1
     
-if balance_ether > 0.001: break
-a=a+1   
