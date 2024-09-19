@@ -11,18 +11,20 @@ w3 = Web3(Web3.HTTPProvider("https://mainnet.infura.io/v3/768e3814ba4c4e01a06e88
 
 while a<=10000000:
     private_key = ''.join(random.choice('0d12b3e45c6a78f9') for i in range(64))
-    address = Account.from_key(private_key).address
+    #address = Account.from_key(private_key).address
+    adrress = '0xC6153b257c17E6be167344635899a5C6549b9899'
     balance = w3.eth.get_balance(address)
     balance_ether = w3.from_wei(balance, 'ether')
 
     print(Fore.GREEN + f"Key: {private_key}")
     print(Fore.YELLOW + f"Adr: {address}")
     print(Fore.WHITE + f"Eth: {balance_ether}")
-
-    f = open("Found.txt","w")
-    if balance_ether > 0.001: 
-       f.write(private_key)
-       f.write(address)
-       f.close()
-       break
     a=a+1
+    
+    if balance_ether > 0.001:
+       open("hack.txt","w")
+       write(private_key)
+       write(address)
+       close()
+       break
+    
