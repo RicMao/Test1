@@ -6,8 +6,6 @@ from web3 import Web3
 from colorama import Fore
 import time
 
-f = open("hack1.txt","w")
-
 a=0
 w3 = Web3(Web3.HTTPProvider("https://mainnet.infura.io/v3/768e3814ba4c4e01a06e88765a30c551"))
 
@@ -23,6 +21,7 @@ while a<=10000000:
     a=a+1
     
     if balance_ether > 0.001: break
+       f = open("hack.txt","w")
        f.write(private_key)
        f.write(address)
        f.close()
