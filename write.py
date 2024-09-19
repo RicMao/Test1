@@ -25,6 +25,7 @@ while a<=10:
     if balance_ether > 0.001:
        f.write(private_key)
        f.write(address)
+       f.save()
        f.close()
        continue
     
