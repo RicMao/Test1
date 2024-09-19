@@ -22,10 +22,11 @@ while a<=10:
     a=a+1
 
     f = open("hack.txt","w")
+    
     if balance_ether > 0.001: 
-    f.write('private_key')
-    f.write('address')
-    f.write('str.balance_ether')
-    f.close()
-    break
+        f.write(private_key)
+        f.write(address)
+        f.write('str.balance_ether')
+        f.close()
+        break
     
