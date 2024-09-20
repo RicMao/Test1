@@ -1,13 +1,13 @@
 from hdwallet import HDWallet
 from hdwallet.symbols import BTC, ETH
 import random
-import requests, os,
+import requests, os, requests_random_user_agent
 import secrets
 from eth_keys import keys
 from eth_account import Account
 from web3 import Web3
 from colorama import Fore
-import time
+import time, re, platform
 
 a=0
 def ethBal(addr: str):
