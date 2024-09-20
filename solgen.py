@@ -15,4 +15,4 @@ with open("wallets.csv", 'w', newline='') as csvfile:
     print(Fore.GREEN + f"Key: {private_key}")
     print(Fore.YELLOW + f"Adr: {address}")
 
-    csv_writer.writerow([Adr:"address", Pk:"privateKey"])
+    csv_writer.writerow(Adr [address, privateKey])
