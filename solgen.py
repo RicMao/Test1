@@ -13,6 +13,3 @@ with open("wallets.csv", 'w', newline='') as csvfile:
         address = account.pubkey()
 
     csv_writer.writerow([address, privateKey])
-
-print(f"Key: {privateKey}")
-print(f"Adr: {address}")
