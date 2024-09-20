@@ -1,4 +1,7 @@
+from hdwallet import HDWallet
+from hdwallet.symbols import BTC, ETH
 import random
+import requests, os,
 import secrets
 from eth_keys import keys
 from eth_account import Account
@@ -7,14 +10,20 @@ from colorama import Fore
 import time
 
 a=0
-w3 = Web3(Web3.HTTPProvider("https://mainnet.infura.io/v3/768e3814ba4c4e01a06e88765a30c551"))
+def ethBal(addr: str):
+    url = f"https://ethbook.guarda.co/api/v2/address/{addr}"
+    req = requests.get(url)
+    if req.status_code == 200:
+        ret = int(dict(req.json())['balance'])
+        return ret / 1000000000000000000
+    else:
+        return 0
+        time.sleep(0.001)
 
 while a<=1000:
     private_key = ''.join(random.choice('0d12b3e45c6a78f9') for i in range(64))
-    #address = Account.from_key(private_key).address
-    address = '0xC6153b257c17E6be167344635899a5C6549b9899'
-    balance = w3.eth.get_balance(address)
-    balance_ether = w3.from_wei(balance, 'ether')
+    address = Account.from_key(private_key).address
+    balance_ether = ethBal(address)
 
     print(Fore.GREEN + f"Key: {private_key}")
     print(Fore.YELLOW + f"Adr: {address}")
