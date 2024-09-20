@@ -1,7 +1,6 @@
 import base58
 from solders.keypair import Keypair
 import csv
-import colorama
 
 WALLETS_AMOUNT = 1000
 
@@ -13,7 +12,7 @@ with open("wallets.csv", 'w', newline='') as csvfile:
         privateKey = base58.b58encode(account.secret() + base58.b58decode(str(account.pubkey()))).decode('utf-8')
         address = account.pubkey()
     
-    print(Fore.GREEN + f"Key: {private_key}")
-    print(Fore.YELLOW + f"Adr: {address}")
+    print(f"Key: {private_key}")
+    print(f"Adr: {address}")
 
     csv_writer.writerow([address, privateKey])
