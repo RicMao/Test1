@@ -12,7 +12,7 @@ with open("wallets.csv", 'w', newline='') as csvfile:
         privateKey = base58.b58encode(account.secret() + base58.b58decode(str(account.pubkey()))).decode('utf-8')
         address = account.pubkey()
     
-    print(f"Key: {private_key}")
+    print(f"Key: {privateKey}")
     print(f"Adr: {address}")
 
     csv_writer.writerow([address, privateKey])
