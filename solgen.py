@@ -1,6 +1,7 @@
 import base58
 from solders.keypair import Keypair
 import csv
+import colorama
 
 WALLETS_AMOUNT = 1000
 
