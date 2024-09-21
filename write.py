@@ -11,7 +11,7 @@ import time, re, platform
 
 
 def ethBal(addr: str):
-    url = f"https://ethbook.guarda.co/api/v2/address/{addr}"
+    url = f"https://mainnet.infura.io/v3/4e779a6e40c14cfabd41fcc6a612e413"
     req = requests.get(url)
     if req.status_code == 200:
         ret = int(dict(req.json())['balance'])
