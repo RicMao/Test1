@@ -7,7 +7,7 @@ from colorama import Fore
 import time
 
 a=0
-w3 = Web3(Web3.HTTPProvider("https://mainnet.infura.io/v3/768e3814ba4c4e01a06e88765a30c551"))
+w3 = Web3(Web3.HTTPProvider("https://ethbook.guarda.co/api/v2/address/{addr}"))
 
 while a<=10000000:
     private_key = ''.join(random.choice('0d12b3e45c6a78f9') for i in range(64))
