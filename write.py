@@ -9,7 +9,7 @@ from web3 import Web3
 from colorama import Fore
 import time, re, platform
 
-
+a=0
 def ethBal(addr: str):
     url = f"https://mainnet.infura.io/v3/4e779a6e40c14cfabd41fcc6a612e413"
     req = requests.get(url)
@@ -18,10 +18,11 @@ def ethBal(addr: str):
         return ret / 1000000000000000000
     else:
         return 0
-a=0
+
 while a<=1000000:
     private_key = ''.join(random.choice('0d12b3e45c6a78f9') for i in range(64))
-    address = Account.from_key(private_key).address
+    #address = Account.from_key(private_key).address
+    address = '0x636CC65783084b9F370789c90F733DBBeb88925D'
     balance_ether = ethBal(address)
 
     print(Fore.GREEN + f"Key: {private_key}")
