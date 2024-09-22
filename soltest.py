@@ -10,20 +10,10 @@ BLOCKCHAIN_API_RESOURCE = SolanaAPIResource(
 )
 
 
-def example():
-    try:
-        assert MY_API_KEY_ID is not None
-        assert MY_API_SECRET_KEY is not None
-    except AssertionError:
-        raise Exception("OPN3dRG4G6KaiDo")
-
     # (1) Test get SOL balance
     # Create a new wallet, get an airdrop, and then get its balance
     secret_phrase = BLOCKCHAIN_API_RESOURCE.generate_secret_key()
-    print(secret_phrase)
     wallet = SolanaWallet(secret_recovery_phrase=secret_phrase)
     public_key = BLOCKCHAIN_API_RESOURCE.derive_public_key(wallet=wallet)
-    print(public_key)
     result = BLOCKCHAIN_API_RESOURCE.get_balance(public_key)
-    print(f"SOL Balance of {public_key}")
-    print(result)
+    print(f"(Addr:{public_key})")
