@@ -4,8 +4,7 @@ from theblockchainapi import SolanaAPIResource, SolanaMintAddresses, SolanaNetwo
 MY_API_KEY_ID = 'OPN3dRG4G6KaiDo'
 MY_API_SECRET_KEY = 'e4rgYD2nuTxZHx5'
 
-while BLOCKCHAIN_API_RESOURCE = 
-SolanaAPIResource(api_key_id=(MY_API_KEY_ID), api_secret_key=(MY_API_SECRET_KEY))
+while BLOCKCHAIN_API_RESOURCE = SolanaAPIResource(api_key_id=(MY_API_KEY_ID), api_secret_key=(MY_API_SECRET_KEY))
 
 
     # (1) Test get SOL balance
