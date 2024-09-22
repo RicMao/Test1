@@ -1,7 +1,7 @@
 from theblockchainapi import SolanaAPIResource, SolanaMintAddresses, SolanaNetwork, SolanaWallet
 
 # Get an API key pair for free here: https://dashboard.blockchainapi.com/api-keys
-MY_API_KEY_ID = OPN3dRG4G6KaiDo
+MY_API_KEY_ID = "OPN3dRG4G6KaiDo"
 MY_API_SECRET_KEY = e4rgYD2nuTxZHx5
 
 BLOCKCHAIN_API_RESOURCE = SolanaAPIResource(
