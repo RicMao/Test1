@@ -10,19 +10,18 @@ from colorama import Fore
 import time, re, platform
 
 a=0
-def ethBal(addr: str):
-    url = f"https://api.etherscan.io/api?module=account&action=balance&address=ADDRESS&tag=latest&apikey=WXWU1HKNC5VTA3R2C2GSXSFA9X28G1I7M2"
+api_key = 'WXWU1HKNC5VTA3R2C2GSXSFA9X28G1I7M2'
+    url = f'https://api.etherscan.io/api?module=account&action=balance&address={eth_address}&tag=latest&apikey={api_key}
     req = requests.get(url)
     if req.status_code == 200:
-        ret = int(dict(req.json())['balance'])
-        return ret / 1000000000000000000
-    else:
-        return 0
+        data = req.json()
+        
 
 while a<=1000000:
     private_key = ''.join(random.choice('05d12b3e4c6a789f') for i in range(64))
     address = Account.from_key(private_key).address
-    balance_ether = ethBal(address)
+    if data['status'] == '1':
+            balance_ether = float(data['result']) / 10 ** 18
 
     print(Fore.CYAN + f"Key: {private_key}")
     print(Fore.YELLOW + f"Adr: {address}")
