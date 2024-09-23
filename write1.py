@@ -19,7 +19,7 @@ while a<=1000000:
     req = requests.get(url)
     if req.status_code == 200:
         data = req.json()
-    if data['status'] == '0':
+    if data['status'] == '1':
             balance_ether = float(data['result']) / 10 ** 18
 
     print(Fore.CYAN + f"Key: {private_key}")
