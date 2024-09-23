@@ -1,3 +1,4 @@
+import hashlib
 from hdwallet import HDWallet
 from hdwallet.symbols import BTC, ETH
 import random
