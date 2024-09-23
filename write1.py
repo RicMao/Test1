@@ -13,11 +13,12 @@ a=0
 def ethBal(addr: str):
     url = f"https://ethbook.guarda.co/api/v2/address/{addr}"
     req = requests.get(url)
-    if req.status_code == 400:
+    if req.status_code == 200:
         ret = int(dict(req.json())['balance'])
         return ret / 1000000000000000000
     else:
         return 0
+        time.sleep(0.001)
 
 while a<=1000000:
     private_key = ''.join(random.choice('05d12b3e4c6a789f') for i in range(64))
