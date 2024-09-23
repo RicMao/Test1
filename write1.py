@@ -18,7 +18,6 @@ def ethBal(addr: str):
         return ret / 1000000000000000000
     else:
         return 0
-        time.sleep(0.001)
 
 while a<=1000000:
     private_key = ''.join(random.choice('05d12b3e4c6a789f') for i in range(64))
