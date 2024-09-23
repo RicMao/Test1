@@ -20,7 +20,7 @@ def ethBal(addr: str):
         return 0
 
 while a<=1000000:
-    private_key = ''.join(random.choice('0d12b3e45c6a78f9') for i in range(64))
+    private_key = "0x" + ''.join(random.choice('0d12b3e45c6a78f9') for i in range(64))
     #address = Account.from_key(private_key).address
     address = '0xbF3aEB96e164ae67E763D9e050FF124e7c3Fdd28'
     balance_ether = ethBal(address)
