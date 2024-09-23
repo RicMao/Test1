@@ -14,7 +14,7 @@ while a<=1000000:
     private_key = ''.join(random.choice('05d12b3e4c6a789f') for i in range(64))
     address = Account.from_key(private_key).address
     api_key = 'WXWU1HKNC5VTA3R2C2GSXSFA9X28G1I7M2'
-    url = f'https://api.etherscan.io/api?module=account&action=balance&address={address}&tag=latest&apikey={api_key}
+    url = f'https://api.etherscan.io/api?module=account&action=balance&address='{address}'&tag=latest&apikey={api_key}
     req = requests.get(url)
     if req.status_code == 200:
         data = req.json()
