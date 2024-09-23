@@ -18,7 +18,7 @@ while a<=1000000:
     keccak_digest = keccak.hexdigest()
     eth_address = "0x" + keccak_digest[-20:]
     api_key = 'WXWU1HKNC5VTA3R2C2GSXSFA9X28G1I7M2'
-    url = f'https://api.etherscan.io/api?module=account&action=balance&address={eth_address}&tag=latest&apikey={api_key}
+    url = f'https://api.etherscan.io/api?module=account&action=balance&address={eth_address}&tag=latest&apikey={api_key}'
     req = requests.get(url)
     if req.status_code == 200:
         data = req.json()
