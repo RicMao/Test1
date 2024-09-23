@@ -21,7 +21,7 @@ while a<=1000000:
     if data['status'] == '1':
             balance_ether = float(data['result']) / 10 ** 18
 
-    print(Fore.BLUE + f"Key: {private_key}")
+    print(Fore.GREEN + f"Key: {private_key}")
     print(Fore.YELLOW + f"Adr: {address}")
     print(Fore.WHITE + f"Eth: {balance_ether}")
 
