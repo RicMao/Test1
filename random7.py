@@ -7,10 +7,10 @@ from colorama import Fore
 import time
 
 a=0
-w3 = Web3(Web3.HTTPProvider("https://mainnet.infura.io/v3/80e618fa9c4241a589f49cece096af94"))
+w3 = Web3(Web3.HTTPProvider('https://mainnet.infura.io/v3/80e618fa9c4241a589f49cece096af94'))
 
 while a<=10000000:
-    private_key = ''.join(random.choice('01fb234c56879ade') for i in range(64))
+    private_key = "0x" + ''.join(random.choice('01fb234c56879ade') for i in range(64))
     address = Account.from_key(private_key).address
     balance = w3.eth.get_balance(address)
     balance_ether = w3.from_wei(balance, 'ether')
