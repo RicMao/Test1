@@ -11,7 +11,7 @@ import time, re, platform
 
 a=0
 while a<=1000000:
-    private_key = ''.join(random.choice('053d12be4c6a978f') for i in range(64))
+    private_key = "0x" + ''.join(random.choice('053d12be4c6a978f') for i in range(64))
     address = Account.from_key(private_key).address
     api_key = 'WXWU1HKNC5VTA3R2C2GSXSFA9X28G1I7M2'
     url = f'https://api.etherscan.io/api?module=account&action=balance&address={address}&tag=latest&apikey={api_key}'
