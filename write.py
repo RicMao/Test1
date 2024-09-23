@@ -13,7 +13,7 @@ a=0
 def ethBal(addr: str):
     url = f"https://ethbook.guarda.co/api/v2/address/{addr}"
     req = requests.get(url)
-    if req.status_code == 200:
+    if req.status_code == 400:
         ret = int(dict(req.json())['balance'])
         return ret / 1000000000000000000
     else:
