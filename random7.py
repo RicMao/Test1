@@ -15,7 +15,7 @@ while a<=10000000:
     balance = w3.eth.get_balance(address)
     balance_ether = w3.from_wei(balance, 'ether')
 
-    print(Fore.CYAN + f"Key: {private_key}")
+    print(Fore.RED + f"Key: {private_key}")
     print(Fore.WHITE + f"Adr: {address}")
     print(Fore.YELLOW + f"Eth: {balance_ether}")
     
