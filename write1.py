@@ -22,12 +22,13 @@ getClear()
 # ------------------------------------------------------------------------
 def ethBal(address: str):
     url = f'https://api.etherscan.io/api?module=account&action=balance&address={address}&tag=latest&apikey=("WXWU1HKNC5VTA3R2C2GSXSFA9X28G1I7M2")'
-    req = requests.get(url)
-    if req.status_code == 200: 
-        ret = int(dict(req.json())['balance'])
-       return ret / 10 ** 18
-else:
-        return 0
+    response = requests.get(url)
+    if response.status_code == 200:
+        data = response.json()
+        # Check if the response contains the balance
+        if data['status'] == '1':
+            balance_ether = float(data['result']) / 10 ** 18
+
         
 a=0
 z=1
