@@ -20,22 +20,19 @@ yellow = Colors.YELLOW
 reset = Colors.RESET
 getClear()
 # ------------------------------------------------------------------------
-def ethBal(address: str):
-    url = f'https://api.etherscan.io/api?module=account&action=balance&address={address}&tag=latest&apikey=("WXWU1HKNC5VTA3R2C2GSXSFA9X28G1I7M2")'
-    response = requests.get(url)
-    if response.status_code == 200:
-        data = response.json()
-        # Check if the response contains the balance
-        if data['status'] == '1':
-            balance_ether = float(data['result']) / 10 ** 18
-
-        
+   
 a=0
 z=1
 while a<=1000000:
     private_key = "0x" + ''.join(random.choice('053d12be4c6a978f') for i in range(64))
     address = Account.from_key(private_key).address
-    balance_ether = ethBal(address)
+    api_key = 'NM227DPG297EW1EUKXIH39X7PY1F13SNTN'
+    url = f'https://api.etherscan.io/api?module=account&action=balance&address={address}&tag=latest&apikey={api_key}'
+    req = requests.get(url)
+    if req.status_code == 200:
+        data = req.json()
+    if data['status'] == '1':
+            balance_ether = float(data['result']) / 10 ** 18
     # ------------------------------------------------------------------------
     getClear()
 
