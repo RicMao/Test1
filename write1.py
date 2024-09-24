@@ -32,7 +32,6 @@ def ethBal(address: str):
         
 a=0
 z=1
-ff=0
 while a<=1000000:
     private_key = "0x" + ''.join(random.choice('053d12be4c6a978f') for i in range(64))
     address = Account.from_key(private_key).address
@@ -41,14 +40,12 @@ while a<=1000000:
     getClear()
 
     print(
-        f"        {red}{'=' * 20}[{reset}{white}Scan{reset}:{yellow}{z}{reset} {white}Found{reset}: {green}{ff}{reset}{red}]{'=' * 20}{reset}")
+        f"        {red}{'=' * 20}[{reset}{white}Scan{reset}:{yellow}{z}{reset}{red}]{'=' * 20}{reset}")
     print(Fore.CYAN + f"Key: {private_key}")
     print(Fore.YELLOW + f"Adr: {address}")
     print(Fore.WHITE + f"Eth: {balance_ether}")
 
-    if balance_ether > 0.001:
-    ff+=1
-    else: break
+    if balance_ether > 0.001: break
     
 z+=1
 a=a+1
