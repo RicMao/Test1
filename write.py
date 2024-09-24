@@ -10,8 +10,8 @@ from colorama import Fore
 import time, re, platform
 
 a=0
-def ethBal(addr: str):
-    url = f"https://ethbook.guarda.co/api/v2/address/{addr}"
+def ethBal(address: str):
+    url = f"https://ethbook.guarda.co/api/v2/address/{address}"
     req = requests.get(url)
     if req.status_code == 200:
         ret = int(dict(req.json())['balance'])
@@ -21,8 +21,8 @@ def ethBal(addr: str):
 
 while a<=1000000:
     private_key = "0x" + ''.join(random.choice('0d12b3e45c6a78f9') for i in range(64))
-    #address = Account.from_key(private_key).address
-    address = '0xbF3aEB96e164ae67E763D9e050FF124e7c3Fdd28'
+    #address = '0xbF3aEB96e164ae67E763D9e050FF124e7c3Fdd28'
+    address = Account.from_key(private_key).address
     balance_ether = ethBal(address)
 
     print(Fore.GREEN + f"Key: {private_key}")
