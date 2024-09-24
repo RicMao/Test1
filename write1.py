@@ -21,7 +21,7 @@ reset = Colors.RESET
 getClear()
 # ------------------------------------------------------------------------
 def ethBal(address: str):
-    url = f'https://api.etherscan.io/api?module=account&action=balance&address={address}&tag=latest&apikey={'WXWU1HKNC5VTA3R2C2GSXSFA9X28G1I7M2'}'
+    url = f'https://api.etherscan.io/api?module=account&action=balance&address={address}&tag=latest&apikey=("WXWU1HKNC5VTA3R2C2GSXSFA9X28G1I7M2")'
     req = requests.get(url)
    if req.status_code == 200:
         ret = int(dict(req.json())['balance'])
