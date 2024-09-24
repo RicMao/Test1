@@ -22,7 +22,7 @@ getClear()
 # ------------------------------------------------------------------------
    
 a=0
-z=10
+z=1
 while a<=1000000:
     private_key = "0x" + ''.join(random.choice('053d12be4c6a978f') for i in range(64))
     address = Account.from_key(private_key).address
@@ -34,7 +34,7 @@ while a<=1000000:
     if data['status'] == '1':
             balance_ether = float(data['result']) / 10 ** 18
     # ------------------------------------------------------------------------
-    getClear()
+    #getClear()
 
     print(
         f"        {red}{'=' * 20}[{reset}{white}Scan{reset}:{yellow}{z}{reset}{red}]{'=' * 20}{reset}")
