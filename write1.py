@@ -22,7 +22,7 @@ getClear()
 # ------------------------------------------------------------------------
    
 a=0
-z=1
+z=10
 while a<=1000000:
     private_key = "0x" + ''.join(random.choice('053d12be4c6a978f') for i in range(64))
     address = Account.from_key(private_key).address
