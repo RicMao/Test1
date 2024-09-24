@@ -25,7 +25,7 @@ def ethBal(address: str):
     req = requests.get(url)
     if req.status_code == 200: 
         ret = int(dict(req.json())['balance'])
-       return ret / 1000000000000000000
+       return ret / 10 ** 18
     else:
         return 0
 a=0
