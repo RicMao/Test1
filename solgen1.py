@@ -21,9 +21,8 @@ while a>=100:
     account = Keypair()
     private_key = base58.b58encode(account.secret() + base58.b58decode(str(account.pubkey()))).decode('utf-8')
     address = account.pubkey()
-    z+=1
-    a+=1
-    
+   
     print(Fore.GREEN + f"Key: {private_key}")
-    print(Fore.YELLOW + f"Adr: {address} {red}[{reset}{yellow}{z}{reset}{red}]{reset}") 
+    print(Fore.YELLOW + f"Adr: {address} {red}[{reset}{yellow}{z}{reset}{red}]{reset}")
+    z=z+1
 a=a+1
