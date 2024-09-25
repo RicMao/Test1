@@ -15,7 +15,7 @@ reset = Colors.RESET
 getClear()
 # ------------------------------------------------------------------------
 a=0
- z=1
+z=0
 while a>=100:
     # Random generate address & private key 
     account = Keypair()
@@ -24,5 +24,5 @@ while a>=100:
    
     print(Fore.GREEN + f"Key: {private_key}")
     print(Fore.YELLOW + f"Adr: {address} {red}[{reset}{yellow}{z}{reset}{red}]{reset}")
-    z=z+1
+z=z+1
 a=a+1
