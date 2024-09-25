@@ -16,7 +16,7 @@ getClear()
 # ------------------------------------------------------------------------
 a=0
 z=0
-while a<=10:
+while a=10:
     # Random generate address & private key 
     account = Keypair()
     private_key = base58.b58encode(account.secret() + base58.b58decode(str(account.pubkey()))).decode('utf-8')
