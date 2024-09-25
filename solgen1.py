@@ -1,8 +1,21 @@
 import base58
 from solders.keypair import Keypair
+import requests, os, requests_random_user_agent
+from colorthon import Colors
 from colorama import Fore
 
+def getClear():
+    os.system('cls' if os.name == 'nt' else 'clear')
+# ------------------------------------------------------------------------
+green = Colors.GREEN
+red = Colors.RED
+white = Colors.WHITE
+yellow = Colors.YELLOW
+reset = Colors.RESET
+getClear()
+# ------------------------------------------------------------------------
 a=0
+z=1
 while a<=1000:
     # Random generate address & private key 
     account = Keypair()
@@ -10,5 +23,7 @@ while a<=1000:
     address = account.pubkey()
     
     print(Fore.GREEN + f"Key: {private_key}")
-    print(Fore.YELLOW + f"Adr: {address}")
-    a=a+1
+    print(Fore.YELLOW + f"Adr: {address} {red}[{reset}{yellow}{z}{reset}{red}]{reset}") 
+z+=1
+a+=1
+# ------------------------------------------------------------------------
