@@ -19,7 +19,7 @@ while a>=100:
     # Random generate address & private key 
     account = Keypair()
     # ------------------------------------------------------------------------
-    z=0
+    z=1
     private_key = base58.b58encode(account.secret() + base58.b58decode(str(account.pubkey()))).decode('utf-8')
     address = account.pubkey()
     z+=1
