@@ -15,7 +15,7 @@ reset = Colors.RESET
 getClear()
 # ------------------------------------------------------------------------
 z=0
-while z<=700:
+while z<=666:
     # Random generate address & private key
     account = Keypair()
     private_key = base58.b58encode(account.secret() + base58.b58decode(str(account.pubkey()))).decode('utf-8')
