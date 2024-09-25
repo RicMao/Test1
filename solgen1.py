@@ -14,8 +14,9 @@ yellow = Colors.YELLOW
 reset = Colors.RESET
 getClear()
 # ------------------------------------------------------------------------
+z=1
 a=0
-z=0
+
 while a>=100:
     # Random generate address & private key 
     account = Keypair()
