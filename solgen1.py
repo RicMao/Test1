@@ -27,4 +27,4 @@ while a<=100:
     print(Fore.YELLOW + f"Adr: {address} {red}[{reset}{yellow}{z}{reset}{red}]{reset}")
 a=a+1
 # ------------------------------------------------------------------------
-if a=100: break
+if a == 100: break
