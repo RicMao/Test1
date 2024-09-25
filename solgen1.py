@@ -26,3 +26,5 @@ while a<=100:
     print(Fore.GREEN + f"Key: {private_key}")
     print(Fore.YELLOW + f"Adr: {address} {red}[{reset}{yellow}{z}{reset}{red}]{reset}")
 a=a+1
+# ------------------------------------------------------------------------
+if a=100: break
