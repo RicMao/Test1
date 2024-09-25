@@ -23,4 +23,4 @@ while z<=100:
     z+=1
    
     print(Fore.GREEN + f"Key: {private_key}")
-    print(Fore.YELLOW + f"Adr: {address} {red}[{reset}{yellow}{a}{reset}{red}]{reset}")
+    print(Fore.YELLOW + f"Adr: {address} {red}[{reset}{yellow}{z}{reset}{red}]{reset}")
