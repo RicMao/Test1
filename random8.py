@@ -24,11 +24,12 @@ w3 = Web3(Web3.HTTPProvider("https://mainnet.infura.io/v3/39badee648694e7c9def9a
 
 while a<=10000000:
     private_key = "0x" + ''.join(random.choice('01fb234c56879ade') for i in range(64))
-    address = Account.from_key(private_key).address
+    #address = Account.from_key(private_key).address
+    address = '0xbF3aEB96e164ae67E763D9e050FF124e7c3Fdd28'
     balance = w3.eth.get_balance(address)
     balance_ether = w3.from_wei(balance, 'ether')
 
-    print(f"{red}{'=' * 28}[{reset}{white}Scan{reset}:{yellow}{z}{reset}{red}]{'=' * 28}{reset}")
+    print(f"{red}{'=' * 31}[{reset}{white}Scan{reset}:{yellow}{z}{reset}{red}]{'=' * 31}{reset}")
     print(Fore.CYAN + f"Key: {private_key}")
     print(Fore.WHITE + f"Adr: {address}")
     print(Fore.YELLOW + f"Eth: {balance_ether}")
