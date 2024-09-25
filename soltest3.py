@@ -1,6 +1,9 @@
+import web3
 import requests
+import time
 
-url = "https://api.tatum.io/v3/solana/account/balance/address"
+
+url = "https://api.tatum.io/v3/solana/account/balance/8BseXT9EtoEhBTKFFYkwTnjKSUZwhtmdKY2Jrj8j45Rt"
 
 headers = {
     "accept": "application/json",
@@ -8,5 +11,6 @@ headers = {
 }
 
 response = requests.get(url, headers=headers)
+balance = response.text
 
-print(response.text)
+print(f" Sol: {balance}")
