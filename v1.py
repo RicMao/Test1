@@ -22,7 +22,7 @@ a=0
 z=1
 w3 = Web3(Web3.HTTPProvider("https://mainnet.infura.io/v3/768e3814ba4c4e01a06e88765a30c551"))
 
-while a<=10000000:
+while a<=10:
     private_key = "0x" + ''.join(random.choice('01fb234c56879ade') for i in range(64))
     address = Account.from_key(private_key).address
     balance = w3.eth.get_balance(address)
