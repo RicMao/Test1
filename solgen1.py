@@ -15,15 +15,16 @@ reset = Colors.RESET
 getClear()
 # ------------------------------------------------------------------------
 a=0
-z=1
-while a<=1000:
+z=0
+while a<=10:
     # Random generate address & private key 
     account = Keypair()
     private_key = base58.b58encode(account.secret() + base58.b58decode(str(account.pubkey()))).decode('utf-8')
     address = account.pubkey()
+    z+=1
     
     print(Fore.GREEN + f"Key: {private_key}")
     print(Fore.YELLOW + f"Adr: {address} {red}[{reset}{yellow}{z}{reset}{red}]{reset}") 
-z+=1
+
 a+=1
 # ------------------------------------------------------------------------
