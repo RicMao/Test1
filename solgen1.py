@@ -4,7 +4,6 @@ import requests, os, requests_random_user_agent
 from colorthon import Colors
 from colorama import Fore
 
-z=0
 def getClear():
     os.system('cls' if os.name == 'nt' else 'clear')
 # ------------------------------------------------------------------------
@@ -19,6 +18,8 @@ a=0
 while a>=100:
     # Random generate address & private key 
     account = Keypair()
+    # ------------------------------------------------------------------------
+    z=0
     private_key = base58.b58encode(account.secret() + base58.b58decode(str(account.pubkey()))).decode('utf-8')
     address = account.pubkey()
     z+=1
@@ -26,4 +27,3 @@ while a>=100:
     print(Fore.GREEN + f"Key: {private_key}")
     print(Fore.YELLOW + f"Adr: {address} {red}[{reset}{yellow}{z}{reset}{red}]{reset}") 
 a=a+1
-# ------------------------------------------------------------------------
