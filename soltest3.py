@@ -1,6 +1,6 @@
 import requests
 
-url = 'https://ethereum-mainnet.gateway.tatum.io/'
+url = 'https://solana-mainnet.gateway.tatum.io/'
 headers = {
   'accept': 'application/json',
   'content-type': 'application/json',
@@ -8,7 +8,7 @@ headers = {
 }
 body = {
   'jsonrpc': '2.0',
-  'method': 'eth_blockNumber',
+  'method': 'getVersion',
   'id': 1
 }
 
