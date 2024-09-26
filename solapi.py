@@ -9,7 +9,7 @@ balance = solana_client.get_balance('52C9T2T7JRojtxumYnYZhyUmrN7kqzvCLc4Ksvjk7Tx
 ui_balance = round(balance*10**(-9), 9)
 #print(ui_balance)
 
-payload = {"jsonrpc": "2.0", "id":"1", "method": "getBalance", "params: [wallet_address]}
+payload = {"jsonrpc": "2.0", "id":"1", "method": "getBalance", "params": [wallet_address]}
 balance_rpc = post(mainnet_beta_url, json=payload).jason()['result']['value']
 ui_balance_rpc = round(balance*10**(-9), 9)
 print(ui_balance_rpc)
