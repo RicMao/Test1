@@ -1,7 +1,8 @@
 from solana.rpc.api import Client
+from solders.pubkey import Pubkey
 from requests import post
 
-wallet_address = '52C9T2T7JRojtxumYnYZhyUmrN7kqzvCLc4Ksvjk7TxD'
+wallet_address = Pubkey('52C9T2T7JRojtxumYnYZhyUmrN7kqzvCLc4Ksvjk7TxD')
 mainnet_beta_url = 'https://api.mainnet-beta.solana.com'
 solana_client = Client(mainnet_beta_url)
 
