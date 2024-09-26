@@ -29,8 +29,9 @@ while z<=10:
     }
     response = requests.get(url, headers=headers)
     
-    print(response.text)
+    
     print(Fore.GREEN + f"Key: {private}")
     print(Fore.YELLOW + f"Adr: {address}")
+    print(response.text)
     
 z+=1
