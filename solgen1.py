@@ -33,6 +33,6 @@ while z<=10:
     
     print(Fore.GREEN + f"Key: {private}")
     #print(Fore.YELLOW + f"Adr: {address}")
-    print(Fore.WHITE + f" Bal: {response}")
+    print(Fore.WHITE + f" Bal: (response).text")
     
 z+=1
