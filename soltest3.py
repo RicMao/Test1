@@ -4,7 +4,7 @@ url = "https://api.tatum.io/v3/solana/account/balance/FykfMwA9WNShzPJbbb9DNXsfgD
 
 headers = {
     "accept": "application/json",
-    "x-api-key": "t-66a730ccccfd17001c479705-2f597d14ad7543f289a03418"
+    "x-api-key": "t-66f3de3e6be651758a55cd61-5d1a4df4209c4956afa40401"
 }
 
 response = requests.get(url, headers=headers)
