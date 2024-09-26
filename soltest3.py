@@ -1,14 +1,14 @@
 import requests
 
-url = 'https://solana-mainnet.gateway.tatum.io/'
+url = 'https://ethereum-mainnet.gateway.tatum.io/'
 headers = {
   'accept': 'application/json',
   'content-type': 'application/json',
-  'x-api-key': 't-66a730ccccfd17001c479705-2f597d14ad7543f289a03418'
+  'x-api-key': 't-66f3de3e6be651758a55cd61-5d1a4df4209c4956afa40401'
 }
 body = {
   'jsonrpc': '2.0',
-  'method': 'getVersion',
+  'method': 'eth_blockNumber',
   'id': 1
 }
 
