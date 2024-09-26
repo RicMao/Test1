@@ -15,12 +15,23 @@ reset = Colors.RESET
 getClear()
 # ------------------------------------------------------------------------
 z=0
-while z<=666:
+while z<=5:
     # Random generate address & private key
     account = Keypair()
     private_key = base58.b58encode(account.secret() + base58.b58decode(str(account.pubkey()))).decode('utf-8')
     address = account.pubkey()
+
+    url = "https://api.tatum.io/v3/solana/account/balance/address"
+
+headers = {
+    "accept": "application/json",
+    "x-api-key": "t-66f3de3e6be651758a55cd61-5d1a4df4209c4956afa40401"
+}
+
+response = requests.get(url, headers=headers)
+
     z+=1
    
     print(Fore.GREEN + f"Key: {private_key}")
     print(Fore.YELLOW + f"Adr: {address}")
+    print(response.text)
