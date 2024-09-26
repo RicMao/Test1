@@ -20,9 +20,8 @@ while z<=666:
     account = Keypair()
     
     private = base58.b58encode(account.secret() + base58.b58decode(str(account.pubkey()))).decode('utf-8')
-    #address = account.pubkey()
     address = account.pubkey()
     z+=1
     
     print(Fore.GREEN + f"Key: {private}")
-    #print(Fore.YELLOW + f"Adr: {address}")
+    print(Fore.YELLOW + f"Adr: {address}")
