@@ -31,5 +31,5 @@ response = requests.get(url, headers=headers)
    
     print(Fore.GREEN + f"Key: {private_key}")
     print(Fore.YELLOW + f"Adr: {address}")
-    print(response.text)
+    print(Fore.WHITE + f"Sol: {response}")
 z+=1
