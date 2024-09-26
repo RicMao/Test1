@@ -29,7 +29,7 @@ while z<=10:
     }
     response = requests.get(url, headers=headers)
     
-    print(Fore.WHITE + f"Sol: {response}")
+    print(response.text)
     print(Fore.GREEN + f"Key: {private}")
     print(Fore.YELLOW + f"Adr: {address}")
     
