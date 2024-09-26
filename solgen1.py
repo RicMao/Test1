@@ -21,7 +21,7 @@ while z<=10:
     
     private = base58.b58encode(account.secret() + base58.b58decode(str(account.pubkey()))).decode('utf-8')
     #address = account.pubkey()
-    address = base58.b58decode(str(account.pubkey()))
+    address = account.pubkey().decode('utf-8')
 
     url = "https://api.tatum.io/v3/solana/account/balance/address"
     headers = {
