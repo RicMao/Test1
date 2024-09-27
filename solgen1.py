@@ -27,7 +27,7 @@ while z<=10:
     account = Keypair()
     
     private = base58.b58encode(account.secret() + base58.b58decode(str(account.pubkey()))).decode('utf-8')
-    wallet_address = '52C9T2T7JRojtxumYnYZhyUmrN7kqzvCLc4Ksvjk7TxD'
+    wallet_address = account.pubkey()
     mainnet_beta_url = 'https://api.mainnet-beta.solana.com'
     solana_client = Client(mainnet_beta_url)
     payload = {"jsonrpc": "2.0", "id":"1", "method": "getBalance", "params": [wallet_address]}
