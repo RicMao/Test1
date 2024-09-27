@@ -1,4 +1,7 @@
+import solana
 from solana.rpc.api import Client
+from solders.pubkey import Pubkey
+from requests import post
 import base58
 from solders.keypair import Keypair
 import requests, os, requests_random_user_agent
@@ -19,16 +22,19 @@ reset = Colors.RESET
 getClear()
 # ------------------------------------------------------------------------
 z=0
-while z<=666:
+while z<=10:
     # Random generate address & private key
     account = Keypair()
     
     private = base58.b58encode(account.secret() + base58.b58decode(str(account.pubkey()))).decode('utf-8')
-    address = account.pubkey()
-    balance = solana_client.get_balance(address)['result']['value']
-    ui_balance = round(balance*10**(-9), 9)
+    wallet_address = '52C9T2T7JRojtxumYnYZhyUmrN7kqzvCLc4Ksvjk7TxD'
+    mainnet_beta_url = 'https://api.mainnet-beta.solana.com'
+    solana_client = Client(mainnet_beta_url)
+    payload = {"jsonrpc": "2.0", "id":"1", "method": "getBalance", "params": [wallet_address]}
+    balance = post(mainnet_beta_url, json=payload).json()['result']['value']
+    balance_rpc = round(balance*10**(-9), 9)
     z+=1
 
-    print(ui_balance)
     print(Fore.GREEN + f"Key: {private}")
     print(Fore.YELLOW + f"Adr: {address}")
+    print(f"Balance: {balance_rpc}")
