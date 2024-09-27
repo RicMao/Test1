@@ -36,5 +36,5 @@ while z<=10:
     z+=1
 
     print(Fore.GREEN + f"Key: {private}")
-    print(Fore.YELLOW + f"Adr: {address}")
+    print(Fore.YELLOW + f"Adr: {wallet_address}")
     print(f"Balance: {balance_rpc}")
