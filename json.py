@@ -1,4 +1,4 @@
-from requests import post
+import requests
 import solana
 from solders.pubkey import Pubkey
 from simplejson import JSONDecodeError
