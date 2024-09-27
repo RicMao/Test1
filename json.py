@@ -3,7 +3,7 @@ from solders.pubkey import Pubkey
 import requests, os, requests_random_user_agent
 from requests import post
 import json
-from json import JSONDecodeError
+from json.decoder import JSONDecodeError
 import random
 import base58
 
