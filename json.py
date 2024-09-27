@@ -2,6 +2,7 @@ import solana
 from solders.pubkey import Pubkey
 import requests, os, requests_random_user_agent
 from requests import post
+from simplejson import JSONDecodeError
 import json
 import random
 import base58
