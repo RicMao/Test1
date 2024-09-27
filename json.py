@@ -9,4 +9,5 @@ public_key = key_array[32:64]
 sk = base58.b58encode(bytes(secret_key))
 pk = base58.b58encode(bytes(public_key))
 
+print(sk)
 print(pk)
