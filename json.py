@@ -1,6 +1,5 @@
 import random
 import base58
-import json
 from solders.pubkey import Pubkey
 from requests import post
 
