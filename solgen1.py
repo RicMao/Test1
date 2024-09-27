@@ -3,6 +3,7 @@ from solana.rpc.api import Client
 from solders.pubkey import Pubkey
 from requests import post
 import base58
+import json
 from solders.keypair import Keypair
 import requests, os, requests_random_user_agent
 from colorthon import Colors
@@ -27,7 +28,7 @@ while z<=10:
     account = Keypair()
     
     private = base58.b58encode(account.secret() + base58.b58decode(str(account.pubkey()))).decode('utf-8')
-    wallet_address = account(account.pubkey())
+    wallet_address = json.dumps(account.pubkey())
     mainnet_beta_url = 'https://api.mainnet-beta.solana.com'
     solana_client = Client(mainnet_beta_url)
     payload = {"jsonrpc": "2.0", "id":"1", "method": "getBalance", "params": [wallet_address]}
