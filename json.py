@@ -1,5 +1,4 @@
 import solana
-from solana.rpc.api import Client
 from solders.pubkey import Pubkey
 from requests import post
 import random
