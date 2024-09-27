@@ -9,5 +9,12 @@ public_key = random_array[32:64]
 sk = base58.b58encode(bytes(secret_key))
 pk = base58.b58encode(bytes(public_key))
 
+mainnet_beta_url = 'https://api.mainnet-beta.solana.com'
+solana_client = Client(mainnet_beta_url)
+payload = {"jsonrpc": "2.0", "id":"1", "method": "getBalance", "params": [pk]}
+balance = post(mainnet_beta_url, json=payload).json()['result']['value']
+balance_rpc = round(balance*10**(-9), 9)
+
 print(sk)
 print(pk)
+print(balance_rpc)
