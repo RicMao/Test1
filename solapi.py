@@ -12,6 +12,6 @@ solana_client = Client(mainnet_beta_url)
 #print(ui_balance)
 
 payload = {"jsonrpc": "2.0", "id":"1", "method": "getBalance", "params": [wallet_address]}
-balance_rpc = post(mainnet_beta_url, json=payload).json()['result']['value']
-ui_balance_rpc = round(balance*10**(-9), 9)
+balance = post(mainnet_beta_url, json=payload).json()['result']['value']
+balance_rpc = round(balance*10**(-9), 9)
 print(ui_balance_rpc)
