@@ -1,6 +1,7 @@
 import requests
 import solana
 from solders.pubkey import Pubkey
+from requests import post
 from simplejson import JSONDecodeError
 import json
 import random
@@ -17,7 +18,7 @@ pk = base58.b58encode(bytes(public_key))
 
 mainnet_beta_url = 'https://api.mainnet-beta.solana.com'
 payload = {"jsonrpc": "2.0", "id":"1", "method": "getBalance", "params": ["pk"]}
-balance = requests.get(mainnet_beta_url, json=payload).json()['result']['value']
+balance = requests.post(mainnet_beta_url, json=payload).json()['result']['value']
 balance_rpc = round(balance*10**(-9), 9)
 
 print(sk)
