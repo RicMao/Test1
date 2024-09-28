@@ -27,7 +27,7 @@ while z<=50:
     wallet_address = account.pubkey()
     z+=1
 
-    file1.write(type(wallet_address)+"\n")
+    file1.write(str(wallet_address)+"\n")
 
     print(Fore.GREEN + f"Key: {private}")
     print(Fore.YELLOW + f"Adr: {wallet_address}")
