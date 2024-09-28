@@ -16,8 +16,10 @@ yellow = Colors.YELLOW
 reset = Colors.RESET
 getClear()
 # ------------------------------------------------------------------------
+file1=open("Sollet.txt","a")
+
 z=0
-while z<=666:
+while z<=50:
     # Random generate address & private key
     account = Keypair()
     
@@ -25,6 +27,11 @@ while z<=666:
     wallet_address = account.pubkey()
     z+=1
 
+    file1.write(wallet_address+"\n")
+
     print(Fore.GREEN + f"Key: {private}")
     print(Fore.YELLOW + f"Adr: {wallet_address}")
+
+file1.close()
+
     
